@@ -17,7 +17,6 @@ public class Repaso{
 
         do{
             int operacion = 0;
-        
 
             System.out.println("********************************");
             System.out.println("  BIENVENIDO AL MENÚ PRICINPAL");
@@ -85,7 +84,7 @@ public class Repaso{
                     System.out.print("\nIngrese un Número ENTERO para evaluar si es Primo: ");
                     int numero = input.nextInt();
                     int primo = 0;
-                    for(int i = 2; i < 10; i++){
+                    for(int i = 2; i < numero; i++){
                         if (numero % i == 0) {
                             primo++;
                         }// fin if
@@ -125,6 +124,7 @@ public class Repaso{
                 case 10:
                     System.out.println("Se necesitan 10 números enteros a Evaluar: ");
                     double numeros, suma, mayor, menor;
+                    int resultado;
                     System.out.print("\nIngrese un Número ENTERO para evaluar: ");
                     numeros = input.nextInt();
                     suma = mayor = menor = numeros;
@@ -142,10 +142,40 @@ public class Repaso{
 
                     }// Fin del for
 
-                    System.out.println("El numero mayor es: " + mayor);
-                    System.out.println("El numero menor es: " + menor);
-                    System.out.println("La suma total es  : " + suma);
-                    System.out.println("El promedio es    : " + (suma/10));
+                    char repetir2;
+                    
+                    do{
+                        System.out.println("-----------------------");
+                        System.out.println("1) El número MAYOR");
+                        System.out.println("2) El número MENOR");
+                        System.out.println("3) La SUMA");
+                        System.out.println("4) El PROMEDIO");
+                        System.out.println("-----------------------");
+                        System.out.print("¿Qué quiere conocer?: ");
+                        resultado = input.nextInt();
+
+                        switch (resultado) {
+                            case 1:
+                                System.out.println("El numero mayor es: " + mayor);
+                            break;
+                            case 2:
+                                System.out.println("El numero menor es: " + menor);
+                            break;
+                            case 3:
+                                System.out.println("La suma total es  : " + suma);
+                            break;
+                            case 4:
+                                System.out.println("El promedio es    : " + (suma/10));
+                            break;
+                            default:
+                                System.out.println("Opción no válida");
+                            break;
+                        }// Fin del Switch  
+
+                        System.out.print("¿Quiere Conocer Alguna otra cosa? Si/No: ");
+                        repetir2 = input.next().charAt(0);
+
+                    }while(repetir2 == 's' || repetir2 == 'S');                             
                 break;
                 default:
                     System.out.println("Opción no Diponible");
